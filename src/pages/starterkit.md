@@ -55,7 +55,7 @@ The expected outcome is an LLM that can effectively model scenarios that require
 # Metric
 we opt for the straightforward metric of the optimal value as a pragmatic solution to assess the quality of the solutions generated. Lets defiune O as the graoud thruth optimial solution and A as the solution of the generated model. 
 <p class="center1">
-    <img src="/public/assets/accuracy.png" class="center1">
+    <img src="/neurips-2024/accuracy.png" class="center1">
 </p>
 
 
