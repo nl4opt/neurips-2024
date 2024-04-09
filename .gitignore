@@ -1,9 +1,6 @@
 # Dependency directories
 node_modules/
 
-# Astro build output
-dist/
-
 # Environment secrets
 .env
 .env.local
