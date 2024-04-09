@@ -44,12 +44,12 @@ title: Home
             <div class="card-box fuchsia-bg">
                 <a class="nodeco" href="#prizes">
                     <h2 class="black">Prizes</h2>
-                    <p>A total monetary prize of $22,000 USD will be awarded. The 5 best winning submissions will be awarded the following prizes:</p>
+                    <p>A total monetary prize of $21,000 USD will be awarded. The 5 best winning submissions will be awarded the following prizes:</p>
                     <ul>
                         <li>1st place: $6,000</li>
                         <li>2nd place: $3,000</li>
                         <li>3rd place: $1,000</li>
-                        <li>4th and 5th place: $500</li>
+                        <li>Student award: $500 for the highest-ranking student groups outside the top 3</li>
                     </ul>
                 </a>
             </div>
