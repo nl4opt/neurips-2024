@@ -1,0 +1,109 @@
+---
+import Nav from '../components/Nav.astro';
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content={Astro.generator} />
+        <title>NL4Opt - neurips-2023</title>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div class='nav-page-style'>
+            <div class="nav-style">
+            <Nav />
+            </div>
+            <main class="page-content" aria-label="Content">
+                <div class="wrapper">
+                    <slot />
+                </div>
+            </main>
+        </div>
+        <style is:global>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+					Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+				font-size: 15px;
+				background-color: rgb(226 232 240);
+				margin: 0;
+				padding-top: 55px;
+				color: rgb(15 23 42);
+				overflow-y: scroll;
+			}
+            .nav-page-style {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                justify-content: flex-start;
+            }
+            .nav-style {
+                background-color: white;
+            }
+
+            .wrapper {
+                max-width: calc(100% - 2rem);
+                padding-right: 1rem;
+                padding-left: 1rem;
+                clear: both;
+                margin-top: 2rem;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-weight: bold;
+                color: rgb(59, 119, 162);
+                margin-bottom: 20px;
+                margin-top: 40px;
+            }
+            .page-content {
+                padding: 1rem;
+                flex: 1 0 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                border-radius: 20px;
+                margin-top: 5rem;
+                margin-bottom: 2rem;
+                margin-left: 5rem;
+                margin-right: 5rem;
+            }
+
+            .wrapper {
+                width: 100%;
+                max-width: 800px;
+            }
+
+            @media screen and (max-width: 768px) {
+                .page-content {
+                    margin-top: 2rem;
+                    margin-bottom: 1rem;
+                    border-radius: 0;
+                }
+                }
+
+                @media screen and (max-width: 480px) {
+                body {
+                    font-size: 14px;
+                }
+                h1, h2, h3, h4, h5, h6 {
+                    margin-bottom: 15px;
+                    margin-top: 30px;
+                }
+
+                a {
+                    color: rgb(33, 18, 247);
+                    text-decoration: underline;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+
+        </style>
+    </body>
+</html>

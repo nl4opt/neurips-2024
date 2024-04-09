@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Base styles for all screen sizes */
+      .dropdown-container {
+        display: flex;
+        justify-content: flex-end;
+        border: 1px solid black;
+        border-radius: 3vw;
+        background-color: lightgreen;
+        height: 2.3vw;
+        margin-left: 80px;
+        margin-right: 80px;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropbtn {
+        color: black;
+        font-size: 1vw;
+        border: none;
+        cursor: pointer;
+        padding-right: 25px;
+        background-color: inherit;
+        padding-top: 10px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        background-color: #edf5f9;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 16px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .caret {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 6px solid black;
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+        content: "";
+      }
+
+      .dropdown:focus .caret {
+        border-top: 0;
+        border-bottom: 6px solid white;
+        content: "";
+      }
+      @media (max-width: 1300px) {
+        .dropdown-container {
+          flex-direction: column;
+          align-items: center;
+          padding: 10px;
+          margin-left: 10px;
+          margin-right: 20px;
+        }
+      }
+
+      /* Media query for screens smaller than 600px */
+      @media (max-width: 600px) {
+        .dropdown-container {
+          flex-direction: column;
+          align-items: center;
+          padding: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .dropdown {
+          display: block;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .dropdown:focus .dropdown-content {
+          display: block;
+          position: static;
+          margin-top: 10px;
+        }
+
+        .caret {
+          right: 5px;
+        }
+
+        .dropdown-content a {
+          padding: 4px 1px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown-container">
+      <div class="dropdown">
+        <button class="dropbtn">
+          Past Competition
+          <span class="caret"></span></button>
+        <div class="dropdown-content">
+          <a href="https://nl4opt.github.io/" target="_blank">NL4OPT 2022</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

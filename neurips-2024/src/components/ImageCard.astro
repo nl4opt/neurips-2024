@@ -1,0 +1,88 @@
+---
+import NeurIPS_logo from '../images/NeurIPS_logo.svg';
+import nl4optlogo from '../images/nl4optlogo_2023.png';
+---
+<div class="page-title">
+    <div class="title">
+        <img class="nips-logo" src={nl4optlogo} height="200">
+    </div>
+    <div>
+        <a href="https://nips.cc/Conferences/2023/">
+            <img class="nips-logo" src={NeurIPS_logo} width="150" height="75">
+        </a>
+    </div>
+</div>
+<div class="codabench">
+    <a class="codabench-link" href="https://www.codabench.org/competitions/758" target="_blank">Go to Codabench</a>
+</div>
+
+<style>
+    :root {
+        --title-colour: black;
+        --title-size: 2rem;
+    }
+    .codabench {
+        display: flex;
+        background-color: white;
+    }
+    .codabench-link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: #76a5b7;
+        color: black;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: 1px solid black;
+    }
+
+    .codabench-link:hover {
+        text-decoration: none;
+        box-shadow: 5px 5px 0px 0px black;
+        transform: translateY(-5px);
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .codabench-link:focus,
+    .codabench-link:active {
+        outline: none;
+    }
+
+    .codabench-link span {
+        margin-left: 10px;
+        display: inline-block;
+    }
+
+    .page-title {
+        color: var(--title-colour);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--title-size);
+        padding-bottom: 1em;
+        border-bottom: var(--title-colour) solid 3px;
+    }
+
+    .page-title > .title {
+        font-size: var(--title-size);
+    }
+
+    .page-title > .nips-logo {
+        height: var(--title-size);
+    }
+    .page-title > .nips-logo, .page-title > .title > img {
+        width: 30%;
+        height: auto;
+    }
+
+    @media (min-width: 768px) {
+        .page-title > .nips-logo {
+            width: 30%;
+            height: auto;
+        }
+    }
+</style>

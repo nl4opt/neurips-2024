@@ -1,0 +1,283 @@
+---
+import  Dropdown  from "../components/Dropdown.astro";
+interface Link {
+	href: string;
+	text: string;
+}
+
+const links: Link[] = [
+    { href: '/neurips-2023/', text: 'Home' },
+	{ href: '/neurips-2023/rules/', text: 'Rules' },
+    { href: '/neurips-2023/starterkit/', text: 'Starter Kit' },
+    { href: '/neurips-2023/evaluation/', text: 'Evaluation' },
+	{ href: '/neurips-2023/tutorial/', text: 'Tutorial' },
+	{ href: '/neurips-2023/participate/', text: 'Participate' },
+	{ href: '/neurips-2023/faq/', text: 'FAQ' },
+	{ href: '/neurips-2023/contact/', text: 'Contact' },
+];
+---
+<header>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="header-menu">
+            <div class="home-title">
+                <a href='/neurips-2023/' aria-current={links[0].href === Astro.url.pathname ? 'page' : undefined}>
+                    <h5>NL4Opt 2023</h5>
+                </a>
+            </div>
+            <div class="other-menus last">
+                <nav class="custom-nav">
+                    {links.map(({ href, text }, index) => (
+                        <a href={href} aria-current={href === Astro.url.pathname ? 'page' : undefined} class={index === links.length - 2 ? 'second-last' : ''}>
+                            <div class='textStyle'>{text}</div>
+                        </a>
+                    ))}
+                </nav>
+            </div>
+            <div class="dropdown">
+                <Dropdown />
+            </div>
+        </div>
+    </body>
+    <button class="hamburger">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+
+  <nav class="mobile-nav">
+    {links.map(({ href, text }, index) => (
+        <a href={href} aria-current={href === Astro.url.pathname ? 'page' : undefined} class={index === links.length - 2 ? 'second-last' : ''}>
+            <div class='textStyle'>{text}</div>
+        </a>
+    ))}
+    <div class="dropdown-container">
+      <Dropdown />
+    </div>
+</nav>
+</header>
+
+<style>
+
+    .dropdown {
+      display: flex;
+    }
+
+    .header-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        height: 5vw;
+        background-color: white;
+        text-decoration: none;
+        padding: 1.11111vw 2.22222vw; /* Converted from 10px 20px */
+    }
+
+    .home-title {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 1.11111vw; /* Converted from 1.5rem */
+      text-decoration: none;
+      color: black;
+      transition: opacity 0.3s ease;
+      margin-bottom: 1.66667vw; /* Converted from 30px */
+      margin-left: 6.66667vw; /* Converted from 60px */
+    }
+
+    .home-title a {
+        text-decoration: none;
+    }
+
+    header {
+      background-color: white;
+      position: fixed;
+      z-index: 999;
+      height: 3.61111vw; /* Converted from 55px */
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    nav {
+      max-width: 88.88889vw; /* Converted from 800px */
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 1.66667vw 0.55556vw; /* Converted from 15px 5px */
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: black;
+      line-height: 2.66667vw; /* Converted from 24px */
+      transition: color 0.15s ease;
+      font-weight: 300;
+      letter-spacing: 0.075em;
+      margin-right: 1.11111vw; /* Converted from 1.8em */
+      display: inline-block;
+      align-items: center;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 1.11111vw; /* Updated font size */
+    }
+
+    nav a:hover {
+      color: black;
+      opacity: 0.8;
+    }
+
+    nav a:last-of-type {
+      margin-right: 0;
+    }
+
+    .other-menus.last {
+        border: 0.02778vw solid black; /* Converted from 1px */
+        border-radius: 2.77778vw; /* Converted from 50px */
+        padding-bottom: 0.27778vw; /* Converted from 5px */
+        padding-top: 0.27778vw; /* Converted from 5px */
+        padding-left: 0.55556vw; /* Converted from 10px */
+        padding-right: 0.55556vw; /* Converted from 10px */
+        height: 3.05556vw; /* Converted from 40px */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    nav a.first {
+        margin-right: 1.11111vw; /* Converted from 1.8em */
+    }
+
+    .other-menus {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    /* Nav */
+    .custom-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .custom-nav a[aria-current="page"],
+    .custom-nav a[href$="${Astro.url.pathname}"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        background-color: black;
+        color: white;
+        border-radius: 2.77778vw; /* Converted from 50px */
+        padding: 0.06667vw 0.16667vw; /* Converted from 0.6vw */
+    }
+    .other-menus .textStyle {
+        font-size: 1.11111vw; /* Updated font size */
+        margin: 0;
+        padding: 0 1.11111vw; /* Converted from 2vw */
+    }
+
+    @media (min-width: 769px) {
+        nav {
+           max-width: 69.44444vw; /* Converted from 1000px */
+        }
+        nav a {
+           font-size: 1.11111vw; /* Converted from 14px */
+        }
+
+        .other-menus.last {
+            border: 0.02778vw solid black; /* Converted from 1px */
+            border-radius: 2.77778vw; /* Converted from 50px */
+            height: 3.05556vw; /* Converted from 40px */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .other-menus.last .textStyle {
+            font-size: 0.97222vw; /* Converted from 14px */
+            padding: 0 1.11111vw; /* Converted from 10px */
+        }
+    }
+    .hamburger {
+        display: none;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .hamburger-bar {
+        display: block;
+        width: 2.77778vw;
+        height: 0.27778vw;
+        background-color: black;
+        margin: 0.27778vw 0;
+        transition: 0.4s;
+    }
+
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-radius: 0 0 3.47222vw 3.47222vw;
+        z-index: 1000;
+        border: 0.02778vw solid black;
+        display: none;
+        max-width: 60vw;
+        margin-right: 5vw;
+        background-color: rgb(180, 237, 180);
+    }
+
+    .mobile-nav a {
+        padding: 0.83333vw; /* Converted from 10px */
+        text-align: center;
+        font-size: 1.11111vw; /* Converted from 14px */
+    }
+
+    .mobile-nav.display-nav {
+        display: flex;
+    }
+    @media (max-width: 800px) {
+        .hamburger {
+            display: block;
+            margin-left: auto;
+        }
+        .other-menus.last {
+            display: none;
+            border-radius: 2.77778vw; /* Converted from 50px */
+            border: 0.02778vw solid black; /* Converted from 1px */
+        }
+        .textStyle {
+            color: black;
+            font-size: 2vw;
+            border-radius: 2.77778vw; /* Converted from 50px */
+            max-width: 19vw;
+        }
+        .custom-nav a[aria-current="page"],
+        .custom-nav a[href$="${Astro.url.pathname}"] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            border-radius: 2.77778vw; /* Converted from 50px */
+            padding: 0.06667vw 0.16667vw;
+        }
+
+    }
+
+
+</style>
+
+<script>
+  document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.mobile-nav').classList.toggle('display-nav');
+  });
+</script>
