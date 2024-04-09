@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nl4opt.github.io',
-  base: '/neurips-2024',
+  base: '/neurips-2024/',
   jsx: 'react',
   integrations: [
     react(),
